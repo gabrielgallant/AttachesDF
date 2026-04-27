@@ -7,8 +7,8 @@ export async function loadPartial(selector, file) {
 }
 
 export async function loadLayout() {
-    await loadPartial('#header', '/components/header.html');
-    await loadPartial('#footer', '/components/footer.html');
+    await loadPartial('#header', './components/header.html');
+    await loadPartial('#footer', './components/footer.html');
 
     const openBtn = document.getElementById("menu-open-button");
     const closeBtn = document.getElementById("menu-close-button");

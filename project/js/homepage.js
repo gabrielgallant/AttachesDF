@@ -1,3 +1,3 @@
-import { loadLayout } from "header.js";
+import { loadLayout } from "./header.js";
 
 loadLayout();
