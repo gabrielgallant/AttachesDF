@@ -53,7 +53,7 @@ header {
 }
 
 #nav-image {
-    height: 44px;
+    height: 100px;
     width: auto;
 }
 
@@ -107,29 +107,54 @@ header {
     color: var(--white-color);
 }
 
-/* ===== HAMBURGER BUTTON ===== */
 #menu-open-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
     background: none;
     border: none;
     color: var(--white-color);
     font-size: 1.3rem;
     cursor: pointer;
-    padding: 0.4rem 0.6rem;
-    border-radius: var(--border-radius-s);
+
+    border-radius: 50%;
     transition: background-color 0.2s ease;
     margin-left: 0.5rem;
 }
 
 #menu-open-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* ===== NAV DRAWER ===== */
 /* (base styles already in your file — these extend them) */
 .nav-drawer {
-    display: flex;
+    display: none;
     flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    background-color: var(--white-color);
+    box-shadow: -2px 0 12px rgba(0,0,0,0.3);
+
+    z-index: 1000;
+
     padding: 1.5rem;
+
+    overflow-y: auto;
+}
+
+.nav-drawer.open {
+    display: flex;
 }
 
 /* Overlay behind the drawer */
@@ -145,17 +170,42 @@ header {
     display: block;
 }
 
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.drawer-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.drawer-divider {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
 /* ===== DRAWER CLOSE BUTTON ===== */
 #menu-close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
     background: none;
     border: none;
     font-size: 1.3rem;
     color: var(--black-color);
     cursor: pointer;
-    align-self: flex-end;
-    padding: 0.3rem 0.5rem;
-    border-radius: var(--border-radius-s);
+
+    border-radius: 50%;
     margin-bottom: 1rem;
+
     transition: background-color 0.2s ease;
 }
 
@@ -169,6 +219,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    width: 100%;
 }
 
 .nav-menu .nav-item a {
@@ -186,3 +237,11 @@ header {
     background-color: var(--primary-color);
     color: var(--white-color);
 }
+
+@media (max-width: 1050px) {
+    .nav-title {
+        display: none;
+    }
+}
+
+/* ===== START OF CSS FOR HOMEPAGE ===== */

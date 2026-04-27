@@ -7,8 +7,17 @@ export async function loadPartial(selector, file) {
 }
 
 export async function loadLayout() {
-    await loadPartial('#header', './components/header.html');
-    await loadPartial('#footer', './components/footer.html');
+    const isEnglish = window.location.pathname.includes("-en");
+
+    await loadPartial('#header', isEnglish 
+        ? './components/header-en.html' 
+        : './components/header.html'
+    );
+
+    await loadPartial('#footer', isEnglish 
+        ? './components/footer-en.html' 
+        : './components/footer.html'
+    );
 
     const openBtn = document.getElementById("menu-open-button");
     const closeBtn = document.getElementById("menu-close-button");
@@ -28,5 +37,23 @@ export async function loadLayout() {
     overlay?.addEventListener("click", () => {
         drawer.classList.remove("open");
         overlay.classList.remove("open");
+    });
+
+    const langToggle = document.getElementById("lang-toggle");
+
+    langToggle?.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        let currentPath = window.location.pathname;
+
+        if (currentPath.includes("-en.html")) {
+            // Switch to French
+            const newPath = currentPath.replace("-en.html", ".html");
+            window.location.href = newPath;
+        } else {
+            // Switch to English
+            const newPath = currentPath.replace(".html", "-en.html");
+            window.location.href = newPath;
+        }
     });
 }

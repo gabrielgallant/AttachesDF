@@ -1,12 +1,12 @@
 <header>
     <div class="nav-logo">
-        <img id="nav-image" src="/images/attachesdflogo.png">
-        <h2 class="nav-title">Les Attaches D.F.</h2>
+        <img id="nav-image" src="../images/attachesdflogo.png">
+        <h2 class="nav-title">The Next Generation in Stud Welding</h2>
     </div>
 
     <ul class="nav-options">
         <li class="nav-item">
-            <a href="header.html">Français</a>
+            <a href="#" id="lang-toggle">Français</a>
         </li>
         <li class="nav-item">
             <a href="../html/homepage-en.html">Homepage</a>
@@ -14,18 +14,29 @@
         <li class="nav-item">
             <a href="../html/contact-en.html">Contact Us</a>
         </li>
-        <button id="menu-open-button" class="fas fa-bars"></button>
+        <li>
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </li>
     </ul>
 
     <div class="nav-drawer" id="nav-drawer">
-        <ul class="nav-menu">
+    
+        <div class="drawer-header">
+            <h2>Menu</h2>
             <button id="menu-close-button" class="fas fa-times"></button>
-            
+        </div>
+
+        <hr class="drawer-divider">
+
+        <ul class="nav-menu">
             <li class="nav-item">
                 <a href="../html/equipment-en.html">Equipment</a>
             </li>
         </ul>
+
     </div>
+
+    <div class="nav-drawer-overlay" id="nav-drawer-overlay"></div>
 
     <script type="module" src="../js/header.js"></script>
 

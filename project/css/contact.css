@@ -30,19 +30,218 @@
 
 }
 
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 70px;
+    background-color: var(--secondary-color);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== LOGO ===== */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+#nav-image {
+    height: 100px;
+    width: auto;
+}
+
+.nav-title {
+    color: var(--white-color);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+/* ===== NAV OPTIONS (always-visible items) ===== */
+.nav-options {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.nav-options .nav-item a {
+    display: inline-block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-medium);
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--border-radius-s);
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-options .nav-item a:hover {
+    color: var(--white-color);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Language toggle — visually distinct */
+.nav-options .nav-item:first-child a {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-m);
+    padding: 0.3rem 0.9rem;
+    font-weight: var(--font-weight-semibold);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-options .nav-item:first-child a:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+#menu-open-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: none;
+    border: none;
+    color: var(--white-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    margin-left: 0.5rem;
+}
+
+#menu-open-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== NAV DRAWER ===== */
+/* (base styles already in your file — these extend them) */
 .nav-drawer {
+    display: none;
+    flex-direction: column;
+
     position: fixed;
     top: 0;
-    right: -300px;
-    width: 300px;
-    height: 100%;
-    background: var(--white-color);
-    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-    transition: right 0.3s ease;
+    right: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    background-color: var(--white-color);
+    box-shadow: -2px 0 12px rgba(0,0,0,0.3);
+
     z-index: 1000;
-    padding: 20px;
+
+    padding: 1.5rem;
+
+    overflow-y: auto;
 }
 
 .nav-drawer.open {
-    right: 0;
+    display: flex;
 }
+
+/* Overlay behind the drawer */
+.nav-drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 999;
+}
+
+.nav-drawer-overlay.open {
+    display: block;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.drawer-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.drawer-divider {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+/* ===== DRAWER CLOSE BUTTON ===== */
+#menu-close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--black-color);
+    cursor: pointer;
+
+    border-radius: 50%;
+    margin-bottom: 1rem;
+
+    transition: background-color 0.2s ease;
+}
+
+#menu-close-button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ===== DRAWER MENU ITEMS ===== */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+}
+
+.nav-menu .nav-item a {
+    display: block;
+    color: var(--black-color);
+    text-decoration: none;
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-medium);
+    padding: 0.65rem 1rem;
+    border-radius: var(--border-radius-s);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-menu .nav-item a:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+@media (max-width: 1050px) {
+    .nav-title {
+        display: none;
+    }
+}
+
+/* ===== START OF CSS FOR CONTACT ===== */
