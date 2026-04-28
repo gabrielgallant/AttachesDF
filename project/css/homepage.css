@@ -250,6 +250,79 @@ header {
     }
 }
 
+.site-footer {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  padding: 50px 20px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-brand h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+.footer-contact h3,
+.footer-address h3 {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+#footer-logo {
+  max-width: 180px;
+  margin-bottom: 10px;
+}
+
+.footer-contact a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-address p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #1e293b;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
 /* ===== START OF CSS FOR HOMEPAGE ===== */
 /* ===== HERO / SECTION PRINCIPALE ===== */
 .home-section {
