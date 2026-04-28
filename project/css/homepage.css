@@ -216,26 +216,32 @@ header {
 /* ===== DRAWER MENU ITEMS ===== */
 .nav-menu {
     list-style: none;
+    padding-left: 0;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
     width: 100%;
+    justify-content: center;
+    margin: 0;
 }
 
 .nav-menu .nav-item a {
-    display: block;
-    color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
     text-decoration: none;
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-medium);
-    padding: 0.65rem 1rem;
+    padding: 0.65rem 1.5rem;
+    text-align: center;
+    background-color: var(--secondary-color);
     border-radius: var(--border-radius-s);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-menu .nav-item a:hover {
     background-color: var(--primary-color);
-    color: var(--white-color);
 }
 
 @media (max-width: 1050px) {
@@ -245,3 +251,88 @@ header {
 }
 
 /* ===== START OF CSS FOR HOMEPAGE ===== */
+/* ===== HERO / SECTION PRINCIPALE ===== */
+.home-section {
+    background: linear-gradient(
+        135deg,
+        var(--white-color),
+        #e9eef6
+    );
+    padding: 4rem 2rem;
+}
+
+/* Conteneur principal */
+.home-section .container {
+    max-width: 900px;
+}
+
+/* Titre principal */
+.home-section h1 {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--black-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Texte d’intro */
+.home-section .lead {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Paragraphes */
+.home-section p {
+    font-size: var(--font-size-m);
+    color: var(--secondary-color);
+    line-height: 1.7;
+}
+
+/* Liste de bénéfices (si tu gardes des <br>) */
+.home-section .benefits {
+    margin-top: 1rem;
+    font-weight: var(--font-weight-medium);
+}
+
+/* Bloc stock / info */
+.home-section .alert {
+    margin-top: 2rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: var(--border-radius-m);
+    padding: 1rem 1.5rem;
+    font-size: var(--font-size-m);
+    box-shadow: 0 6px 18px rgba(47, 93, 170, 0.25);
+}
+
+/* Effet carte (optionnel si tu veux un rendu plus pro) */
+.home-card {
+    background: var(--white-color);
+    border-radius: var(--border-radius-m);
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.home-section h1 {
+    animation: fadeInUp 0.6s ease;
+}
+
+#welding-materials {
+    animation: fadeInUp 0.8s ease;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

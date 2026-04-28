@@ -216,26 +216,32 @@ header {
 /* ===== DRAWER MENU ITEMS ===== */
 .nav-menu {
     list-style: none;
+    padding-left: 0;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
     width: 100%;
+    justify-content: center;
+    margin: 0;
 }
 
 .nav-menu .nav-item a {
-    display: block;
-    color: var(--black-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
     text-decoration: none;
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-medium);
-    padding: 0.65rem 1rem;
+    padding: 0.65rem 1.5rem;
+    text-align: center;
+    background-color: var(--secondary-color);
     border-radius: var(--border-radius-s);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-menu .nav-item a:hover {
     background-color: var(--primary-color);
-    color: var(--white-color);
 }
 
 @media (max-width: 1050px) {
