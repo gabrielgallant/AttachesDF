@@ -244,6 +244,21 @@ header {
     background-color: var(--primary-color);
 }
 
+@media (min-width: 1050px) {
+    .nav-drawer {
+        display: none;
+    }
+
+    .nav-drawer-overlay {
+        display: none;
+    }
+
+    #menu-open-button,
+    #menu-close-button {
+        display: none;
+    }
+}
+
 @media (max-width: 1050px) {
     .nav-title {
         display: none;

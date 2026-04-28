@@ -244,6 +244,33 @@ header {
     background-color: var(--primary-color);
 }
 
+@media (min-width: 1050px) {
+
+    .nav-drawer {
+        display: flex !important;
+
+        position: static;   /* no longer floating */
+        width: 220px;
+        height: auto;
+
+        box-shadow: none;
+        background-color: transparent;
+
+        padding: 0;
+    }
+
+    /* Remove overlay entirely */
+    .nav-drawer-overlay {
+        display: none !important;
+    }
+
+    /* Hide hamburger + close button */
+    #menu-open-button,
+    #menu-close-button {
+        display: none;
+    }
+}
+
 @media (max-width: 1050px) {
     .nav-title {
         display: none;
